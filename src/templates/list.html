@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron">
+    <h1 class="display-4">SimpleTODO</h1>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <h2>Increase your productivity with SimpleTODO</h2>
+    <p>You can create a new task from the button below.</p>
+    <a class="btn btn-primary btn" href="{% url 'create' %}" role="button">Create</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+{% for item in object_list %}
+<div class="alert alert-{{ item.priority }}" role="alert">
+    <h3>{{ item.title }}</h3>
+    <p>deadline: {{ item.duedatetime }}</p>
+    <a href="{% url 'update' item.pk %}" class="btn btn-info btn" tabindex="-1" role="button" aria-disabled="true">edit</a>
+    <a href="{% url 'delete' item.pk %}" class="btn btn-success btn" tabindex="-1" role="button" aria-disabled="true">delete</a>
+    <a href="{% url 'detail' item.pk %}" class="btn btn-primary btn" tabindex="-1" role="button" aria-disabled="true">detail</a>
+</div>
+{% endfor %}
+</div>
+{% endblock content %}

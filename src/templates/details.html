@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-6">Detail</h1>
+        </div>
+      </div>
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+    <div class='alert alert-success' role='alert'>
+            <span class="badge badge-primary">Title</span>
+        <h5>{{ object.title }}</h5>
+    </div>
+    <div class='alert alert-success' role='alert'>
+        <span class="badge badge-primary">Note</span>
+        <h5>{{ object.memo }}</h5>
+    </div>
+    <div class='alert alert-success' role='alert'>
+            <span class="badge badge-primary">Priority</span>
+        <h5>{{ object.priority }}</h5>
+    </div>
+    <div class='alert alert-success' role='alert'>
+            <span class="badge badge-primary">Deadline</span>
+        <h5>{{ object.duedatetime }}</h5>
+    </div>
+</div>
+{% endblock content %}
+
+
+
